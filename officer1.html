@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+<link rel="stylesheet" href="animate.css">
+  <style type="text/css">
+    body{
+  background:url(light4.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family:sans-serif;
+  color:#333;
+  text-align:center;
+}
+h1{
+  margin:80px 0
+}
+.btn {
+  background: #428bca;
+  border: #357ebd solid 0px;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 15px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 60px;
+  position: relative;
+  transition: color .1s ease;
+}
+.btn: hover {
+  background: #357ebd;
+}
+.btn.btn-big {
+  font-size: 18px;
+  padding: 15px 20px;
+  min-width: 100px;
+  
+
+}
+.btn-close {
+  color: #aaaaaa;
+  font-size: 20px;
+  text-decoration: none;
+  padding:10px;
+  position: absolute;
+  right: 7px;
+  top: 0;
+}
+.btn-close:hover {
+  color: #919191;
+}
+.modale:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.opened:before {
+  display: block;
+}
+.opened .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+.modal-dialog {
+  background: #fefefe;
+  border: #333333 solid 0px;
+  border-radius: 5px;
+  margin-left: -200px;
+  text-align:center;
+  position: fixed;
+  left: 50%;
+  top: -100%;
+  z-index: 11;
+  width: 360px;
+  box-shadow:0 5px 10px rgba(0,0,0,0.3);
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-body input{
+  width:200px;
+  padding:8px;
+  border:1px solid #ddd;
+  color:#888;
+  outline:0;
+  font-size:14px;
+  font-weight:bold
+}
+.modal-header,
+.modal-footer {
+  padding: 10px 20px;
+}
+.modal-header {
+  border-bottom: #eeeeee solid 1px;
+}
+.modal-header h2 {
+  font-size: 20px;
+}
+
+.trigger{
+    display:none;
+    font-family:arial,sans-serif;
+
+}
+
+div.nav-menu{
+    background:#333333;
+    border-bottom:2px solid #777777;
+    padding: 0 10px;
+    margin: 0px;
+    opacity: 0.80;
+}
+
+div.nav-menu ul{
+    margin:0;
+    padding:0;
+}
+
+div.nav-menu ul li{
+    list-style:none;
+    float:left;
+}
+
+div.nav-menu ul li a:link,
+div.nav-menu ul li a:visited{
+    display: block;
+    font-size:90%;
+    padding: 10px 25px 10px 25px;
+    color:#efefef;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+    font-family:arial,sans-serif;
+    transition:all 0.3s ease-in-out;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    
+}
+.li
+{
+  opacity: 1;
+}
+
+.trigger{
+    display:none;
+    font-family:arial,sans-serif;
+}
+
+div.nav-menu ul li a:hover{
+    background:#efefef;
+    color:#333333;
+    transition:all 0.3s ease-in-out;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+}
+
+.clearfix:before, .clearfix:after{content: "";display:table;}
+.clearfix:after{ clear:both;}
+.clearfix{ *zoom: 1;}
+
+.head
+{
+  margin-top: -9px; 
+}
+#img
+{
+  margin-top: 70px;
+}
+#passwordforgot
+{
+  text-decoration: none;
+}
+
+  </style>
+
+
+</head>
+<body>
+  <header class="head">
+    <div class="trigger">Menu</div>
+    <div class="nav-menu">
+        <ul class="clearfix">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="userflag.php">User</a></li>
+            <li><a href="officerflag.php">Officer</a></li>
+            <li><a href="adminflag.php">Admin</a></li>
+        </ul>
+    </div>
+</header>
+<!-- Modal -->
+<div class="modale" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Officer Registration</h2>
+      <a href="#" class="btn-close closemodale" aria-hidden="true">&times;</a>
+    </div>
+    <div class="modal-body">
+      <form method="post" action="officer_signup.php">
+      <input type="text" name="username" placeholder="username" size="20" required /><br>
+      <input type="Password" id="password" name="password" placeholder="password" size="20" minlength="8" required />
+      <input type="Password" id="conpassword" name="conpassword" placeholder="confirm password" minlength="8" size="20" onchange='checkpass()' required />
+    </div>
+      <div class="modal-footer">
+        
+        <input class="btn" type="submit" id="btn_ingresar" value="Sign Up" disabled="true">
+        <br><br>
+      </div>
+      <form method="post" action="officer_signup.php">
+  </div>
+</div>
+<!-- /Modal -->
+  <p><a href="#" class="openmodale animated bounceInUp"><img src="adminlogin.png" id="img" width="20%"></a></p>
+  <p><a href="#" class="btn btn-big openmodale">ENTER</a></p>
+
+<script type="text/javascript">
+
+	$('.modale').addClass('opened');
+
+	function checkpass() {
+
+      if(document.getElementById('password').value==document.getElementById('conpassword').value)
+      {
+        document.getElementById('btn_ingresar').disabled = false;
+
+      }
+      else
+      {
+      		alert('Passwords do not match!');
+      		document.getElementById('conpassword').value = "";
+      }
+    }
+
+  $("#img").hover(
+    function(){
+  $(this).filter(':not(:animated)').animate({
+     'width':'318px','height':'318px'
+  },'slow');
+
+},
+function() {
+  $(this).animate({
+     'width':'268px','height':'268px'
+  },'slow');
+});
+
+  $('.openmodale').click(function (e) {
+         e.preventDefault();
+         $('.modale').addClass('opened');
+    });
+$('.closemodale').click(function (e) {
+         e.preventDefault();
+         $('.modale').removeClass('opened');
+    });
+</script>
+</body>
+</html>

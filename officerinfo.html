@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+ <link rel="stylesheet" href="css/normalize.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+.container {
+	clear: both;
+	width: 500px;
+margin: 10em auto;
+padding: 50px;
+background-color: #fff;
+border-radius: 2em;
+position: relative;
+top: 200px;
+font-family: 'Open Sans','Helvetica', sans-serif;
+
+	}
+body {
+		background: url("light1.jpg");
+		background-size: cover;
+		font-family: 'Open Sans','Helvetica', sans-serif;
+		font-weight: bold;
+
+	}
+	li a {
+    display: block;
+    color: #000;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+.topnav {
+    background-color: #333;
+	float:right;
+    margin: 0px auto;
+	width: 100%;
+	
+}
+.topnav a {
+float:right;
+font-family: helvetica;
+color: white;
+font-size: 17px;
+padding: 14px 16px;
+text-decoration: none;
+display: block;
+}
+.topnav a:hover
+{
+background-color: gray;
+}
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}
+.trigger{
+    display:none;
+    font-family:arial,sans-serif;
+
+}
+
+div.nav-menu{
+    background:#333333;
+    border-bottom:2px solid #777777;
+    padding: 0 10px;
+    margin: 0px;
+    opacity: 0.80;
+}
+
+div.nav-menu ul{
+    margin:0;
+    padding:0;
+}
+
+div.nav-menu ul li{
+    list-style:none;
+    float:left;
+}
+
+div.nav-menu ul li a:link,
+div.nav-menu ul li a:visited{
+    display: block;
+    font-size:90%;
+    padding: 10px 25px 10px 25px;
+    color:#efefef;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+    font-family:arial,sans-serif;
+    transition:all 0.3s ease-in-out;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    
+}
+.li
+{
+  opacity: 1;
+}
+
+.trigger{
+    display:none;
+    font-family:arial,sans-serif;
+}
+
+div.nav-menu ul li a:hover{
+    background:#efefef;
+    color:#333333;
+    transition:all 0.3s ease-in-out;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+}
+.divcenter
+{
+  top:50%;
+  left:50%;
+}
+
+.clearfix:before, .clearfix:after{content: "";display:table;}
+.clearfix:after{ clear:both;}
+.clearfix{ *zoom: 1;}
+
+.head
+{
+  margin-top: -9px; 
+}
+#img
+{
+  margin-top: 70px;
+}
+#passwordforgot
+{
+  text-decoration: none;
+}
+.floating-box {
+    float: left;
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+    border: 3px solid #73AD21;  
+}
+* {
+    box-sizing: border-box;
+}
+
+</style></head>
+<body>
+   <header class="head">
+    <div class="trigger">Menu</div>
+    <div class="nav-menu">
+        <ul class="clearfix">
+          <li><a href="adminfunc.html">Back</a></li>
+            <li style="float: right;"><a href="logout.php">Logout</a></li>
+            
+        </ul>
+    </div>
+</header>
+<div class="container" align="center">
+
+ <form action="officerregister.php" align = "left" method="post" autocomplete="off">
+      <h1></h1>
+        <h1>OFFICER REGISTRATION</h1>
+        
+        <fieldset>
+
+          <legend>
+
+            <span class="number">1</span>Your basic info</legend>
+          <label for="lic_no">License Number:</label>
+          <input type="text" id="lic_no" name="licenseNo">
+          
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="firstName">
+
+
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lastName">
+          
+          <label for="cno">Contact Number:</label>
+          <input type="number" id="cno" name="phone">
+          
+          
+          
+          <label for="dob">DOB:</label>
+          <input type="date" id="dob" value="DOB" name="DOB"></label><br>
+      
+         
+          <label for="add">Address:</label>
+          <textarea id="add" name="address"></textarea>
+
+        </fieldset>
+        
+        <button type="submit">Sign Up</button>
+</div>
+</body>
+</html>
